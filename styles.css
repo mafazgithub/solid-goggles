@@ -1,0 +1,45 @@
+/* Add your CSS styles for the chat interface */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+#chat-container {
+    height: 70vh;
+    overflow-y: scroll;
+    padding: 20px;
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.futuristic {
+    background-image: linear-gradient(to bottom, #000000, #121212);
+}
+
+.user-message, .bot-message {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.user-message {
+    background-color: #3498db;
+    color: #ffffff;
+    text-align: right;
+}
+
+.bot-message {
+    background-color: #2ecc71;
+    color: #ffffff;
+}
+
+#user-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-top: 1px solid #ccc;
+    outline: none;
+    background-color: #121212;
+    color: #ffffff;
+}

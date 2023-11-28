@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Chatbot</title>
+</head>
+<body>
+    <h1>Simple Chatbot</h1>
+    <div id="chat-container"></div>
+    <input type="text" id="user-input" placeholder="Type your message..." onkeyup="getUserInput(event)">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        function getUserInput(event) {
+            if (event.key === "Enter") {
+                var userInput = $("#user-input").val();
+                $("#chat-container").append("<p>User: " + userInput + "</p>");
+                $("#user-input").val("");
+                getBotResponse(userInput);
+            }
+        }
+
+        function getBotResponse(userInput) {
+            $.ajax({
+                url: "/get",
+                data: { msg: userInput },
+                type: "GET",
+                success: function (data) {
+                    $("#chat-container").append("<p>Bot: " + data + "</p>");
+                },
+            });
+        }
+    </script>
+</body>
+</html>
